@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gitlab-python2022ctr",
+  "private_key_id": "06af2a2391f1e986fdaf8af491a4e3b0e1ed11fdzed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQCZrjzTtMftXpzi\nhyl9X9KbjBDI/SE1gXJH7Bx8H1dUgCk6UjQ0nCl4SKCqJtJWekRPI6xqaaw4Sbio\nIIrvaeoS70YQh9d+JVI753oKABwJDhmotborrfv95Ra20D4I12iXAwbtjiyfBDgc\nMt5JQDU9kIqHEUPElzD8txosxnQgpa4srOt6V+uQ2irIjZKF2sgdqbAfaGxHSe0y\nwRlu2z97te6wqCmNJgy6e58hFvPAZUyN0YUDnx13BqevUnnRE4NhfeA/HdNmgRal\nyUOatiQlAIcoktUWlJATcvFqCW+npBxYRNDEfqQUXmAOiUGN8UhdEgTQk8uHc+AX\nyEc1fPBrAgMBAAECgf8bK11cuvgY2SX/ygt4yYsKGtWaehyBWR7uHPYIr82kPz0d\nqih0Lh4dS8NBufogbDrpwuAN3SWL6nMswWSyRFMwpvbFlpPXzGKEk4RVNswv1x7r\nE5ST/mdML/HUFFIlr8med0lZ+JlTN8qNyWb+XOBiFPLafGvKjqRmVSglkvBKPVHf\n7dnZE/0D1y227IiFCFHnI3G8+t0L6aMAE8SCurSs1dTtdpyT/QB7SAs1KEbczLMO\ntg9QvmImQ4fOohzHuZm30o1evVNOp8/whSvS/mRQhkYZlfnjKi+8E3GJLKxZyEX2\nTp+Uc6KTRe/N7mZBPvesbQN+HmeocwKYAtxdYuECgYEAy+BKfp3yrSWVw7+qWx29\njUBWbFJq7WPZikJ+SdFks8L6bRx55ev6O6V23XUun8Z5zCtYyArqs0J64R5Vnu0C\niJ31RiiQ8NXISOXps2NJAS6NkcntFOD/CWu1y013G5KlzPPuKr6U4iZKOgRkFIqI\ngPn5RYWcUCntqb+N+HIqR3kCgYEAwPilVqiiFauAerrLm8IjX+Qo3nm5/Npwti42\ngbXi4uMhzesgh7Ch1SDS29CwKs20KMmGHFmN5Vzg9sRvRh33yEiu4G+cOXMU7tXf\n/ArrSTttHdTBz8IxzxRym/KHgleMlmORw/28wfyiOKobOV49ace7ndDr6SUoWeyj\nNMEWagMCgYA6P2aJLk87MNXNC2F8js6tIIiQgiuSj0iDu+Og63Y99aLesZgSHI1t\npSSEuQoNFAOQVYIUBSpw9Lluv9/ufACRT6/Xz5c5d5q1WRqf6endsJM559sYb//t\njRxvbT5uXkOIfti41aJrykzCrqZ5R+sgDkstlbLHJHOGX/gL13JE4QKBgATrkhOm\nkxNoXwtCDgT3qz07rQsXIXXf//W1MfCWuaU9U1RTxW2QRGARyS6PoJ5GxmwvzzqT\n0fliJ95C3e90vieeKs9QKTSRyZvZWi+r+5nPaRXUoehxNCHqjI2LXoclQlFnUoUj\nyBdOILi/JZiN3ZT/4bnBZPJ53xCD5xlmPvMPAoGAXLFRCXOPzcr1zJbazfZjNVSq\nIbMf7SG08nc9BVP6uzCJchthcqcXmEIiWtJ846o32kuQXNexQXUehRgcNCSE/PJf\nRR98EdBtmzdemLnmN5820BeTzhdPc/J0gu3rCP3hOZ/F9mH2JaQFjVNk1b7L+3rQ\n9StpfMxg9gmhCNhqtTU=lin\n-----END PRIVATE KEY-----\n",
+  "client_email": "gitlab-python2022ctr@gitlab-python2022.iam.gserviceaccount.com",
+  "client_id": "114144858110518236037123",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gitlab-python2022ctr%40gitlab-python2022ctr.iam.gserviceaccount.com"
+}
