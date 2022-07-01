@@ -1,0 +1,9 @@
+requests
+pandas 
+openpyxl
+gspread
+datetime
+google-auth
+google-api-python-client
+oauth2client
+telebot
