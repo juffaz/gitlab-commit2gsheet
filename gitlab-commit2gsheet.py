@@ -89,6 +89,8 @@ def get_commits_fields():
 
     return author_name, author_email, message, committed_date, web_url, pname
 
+data_commits = get_commits_fields()
+
 df = pd.DataFrame({'ProjectName': data_commits[5], 'Name' : data_commits[0], 'Message' : data_commits[1], 'Author_email' : data_commits[2], 'Committed_date' : data_commits[3], 'web_url' : data_commits[4]})
 
 def pandas2xlsx():
