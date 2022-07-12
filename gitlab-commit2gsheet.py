@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import openpyxl
 import gspread
 from datetime import datetime, timedelta
@@ -8,13 +8,15 @@ import datetime as dt
 import os
 from oauth2client.service_account import ServiceAccountCredentials
 
-GITLAB_GROUPS = os.environ.get('GITLAB_GROUPS', [14669440578,54325376135])
-PRIVATE_TOKEN = os.environ.get('PRIVATE_TOKEN', "glpat-dsQ7PFjDxJyDRnF2F-Z-zdf")
+
+GITLAB_GROUPS = os.environ.get('GITLAB_GROUPS', [14669440125,54325376234])
+list(GITLAB_GROUPS)
+PRIVATE_TOKEN = os.environ.get('PRIVATE_TOKEN', "glpat-dsQ7PFjDxJyDRnF2F-Z-Sdz")
 GITLAB_DOMAIN = os.environ.get('GITLAB_DOMAIN', "gitlab.com")
 GITLAB_API_URL_GROUP_ONE = "https://" + GITLAB_DOMAIN + "/api/v4/groups/"
 GITLAB_API_URL_GROUP_TWO = "/projects?include_subgroups=yes"
 GITLAB_API_URL_COMMIT_ONE = "https://" + GITLAB_DOMAIN + "/api/v4/projects/"
-WORKSHEET_KEY = os.environ.get('WORKSHEET_KEY', "11DkispjTPoBtuZcFkpHROMpSsoyBgt69mi5ygqybCVMWer")
+WORKSHEET_KEY = os.environ.get('WORKSHEET_KEY', "11DkispjTPoBtuZcFkpHROMpSsoyBgt69mi5ygqybCVMOkj")
 
 def gitlab_commit_date(day_minus):
     return (datetime.today() - timedelta(days=day_minus)).strftime("%Y-%m-%d")
@@ -30,9 +32,12 @@ print(GITLAB_API_URL_COMMIT_TWO)
 def get_data(url):
     response = requests.get(url, headers={"PRIVATE-TOKEN":PRIVATE_TOKEN}, verify=True)
     data = response.json()
+    print(url)
     return data
 
-def get_project_url_in_group(): 
+
+
+def get_project_url_in_group(GITLAB_GROUPS): 
     project_urls = []
     #project_names = []
     for i in GITLAB_GROUPS: 
@@ -43,13 +48,15 @@ def get_project_url_in_group():
     return project_urls
 
 def get_id_in_group():
-    project_url_in_group = get_project_url_in_group()
+    project_url_in_group = get_project_url_in_group(GITLAB_GROUPS)
     ids = {}
     pnames = []
     for d in project_url_in_group:
           for dic1 in d:
                  ids[dic1['id']] = dic1['name']
     return(ids)
+
+
 
 def get_commits(project_ids):
     pass
@@ -89,14 +96,26 @@ def get_commits_fields():
 
     return author_name, author_email, message, committed_date, web_url, pname
 
-data_commits = get_commits_fields()
+def data2pandas(commit_day):
+    global df
+    gitlab_date = gitlab_commit_date(commit_day)
+    global GITLAB_API_URL_COMMIT_DATE
+    GITLAB_API_URL_COMMIT_DATE =  GITLAB_API_URL_COMMIT_SINCE + str(gitlab_date)
+    data_commits = get_commits_fields()
+    df = pd.DataFrame({'ProjectName': data_commits[5], 'Name' : data_commits[0], 'Message' : data_commits[1], 'Author_email' : data_commits[2], 'Committed_date' : data_commits[3], 'web_url' : data_commits[4]})
 
-df = pd.DataFrame({'ProjectName': data_commits[5], 'Name' : data_commits[0], 'Message' : data_commits[1], 'Author_email' : data_commits[2], 'Committed_date' : data_commits[3], 'web_url' : data_commits[4]})
+testik = 10
 
-def pandas2xlsx():
+
+
+
+def pandas2xlsx(comm_day):
+    data2pandas(comm_day)
     df.to_excel(r'dataframe.xlsx', index = False, header=True)   
 
-pandas2xlsx()
+#pandas2xlsx()
+
+print(GITLAB_API_URL_COMMIT_TWO)
 
 def pandas2gsheets():
 
@@ -106,6 +125,7 @@ def pandas2gsheets():
      ]
      creds = ServiceAccountCredentials.from_json_keyfile_name("cred.json", scope)
      client = gspread.authorize(creds)
+     #sh = client.create('micro2022br')
      sh = client.open_by_key(WORKSHEET_KEY)
      worksheet = sh.get_worksheet(0)
      worksheet.format("A1:F1", {
@@ -122,5 +142,11 @@ def pandas2gsheets():
      })
      worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 
-pandas2gsheets()
+#pandas2gsheets()
 
+def main():
+    pandas2xlsx(testik)
+    pandas2gsheets()
+
+if __name__ == "__main__":
+    main() 
