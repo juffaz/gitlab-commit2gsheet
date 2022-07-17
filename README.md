@@ -23,6 +23,7 @@ cd gitlab-commit2gsheet && docker build . -t gitlab-commit2gsheet
 docker run -e PRIVATE_TOKEN="GITLAB_TOKEN" -e GITLAB_GROUPS="123,456" -e GITLAB_DOMAIN="gitlab.com" -e WORKSHEET_KEY="GOOGLE_SHEET_KEY" -it gitlab-commit2gsheet 
 
 # docker run from docker hub
+docker run -e PRIVATE_TOKEN="GITLAB_TOKEN" -e GITLAB_GROUPS="123,456" -e GITLAB_DOMAIN="gitlab.com" -e WORKSHEET_KEY="GOOGLE_SHEET_KEY" -v $(pwd)/cred.json:/app/cred.json -it yuvenaliyt/python-gitlab-commit2gsheet
 
 
 ```
