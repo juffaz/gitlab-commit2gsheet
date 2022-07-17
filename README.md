@@ -10,6 +10,7 @@ export PRIVATE_TOKEN="GITLAB_TOKEN"
 export GITLAB_GROUPS="123,456" 
 export GITLAB_DOMAIN="gitlab.com"
 export WORKSHEET_KEY="GOOGLE_SHEET_KEY"
+#### Change cred.json from Google Accout
 python gitlab_commits2telegram.py
 ```
 
