@@ -9,14 +9,17 @@ import os
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-GITLAB_GROUPS = os.environ.get('GITLAB_GROUPS', [14669440125,54325376234])
-list(GITLAB_GROUPS)
-PRIVATE_TOKEN = os.environ.get('PRIVATE_TOKEN', "glpat-dsQ7PFjDxJyDRnF2F-Z-Sdz")
-GITLAB_DOMAIN = os.environ.get('GITLAB_DOMAIN', "gitlab.com")
+WORKSHEET_KEY = os.environ.get('WORKSHEET_KEY',)
+GITLAB_GROUPS = os.environ.get('GITLAB_GROUPS')
+GITLAB_GROUPS = [int(s) for s in GITLAB_GROUPS.split(',')]
+print(GITLAB_GROUPS)
+print(type(GITLAB_GROUPS))
+PRIVATE_TOKEN = os.environ.get('PRIVATE_TOKEN', )
+GITLAB_DOMAIN = os.environ.get('GITLAB_DOMAIN', )
 GITLAB_API_URL_GROUP_ONE = "https://" + GITLAB_DOMAIN + "/api/v4/groups/"
 GITLAB_API_URL_GROUP_TWO = "/projects?include_subgroups=yes"
 GITLAB_API_URL_COMMIT_ONE = "https://" + GITLAB_DOMAIN + "/api/v4/projects/"
-WORKSHEET_KEY = os.environ.get('WORKSHEET_KEY', "11DkispjTPoBtuZcFkpHROMpSsoyBgt69mi5ygqybCVMOkj")
+
 
 def gitlab_commit_date(day_minus):
     return (datetime.today() - timedelta(days=day_minus)).strftime("%Y-%m-%d")
@@ -55,6 +58,7 @@ def get_id_in_group():
           for dic1 in d:
                  ids[dic1['id']] = dic1['name']
     return(ids)
+
 
 
 
