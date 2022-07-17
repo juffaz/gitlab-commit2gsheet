@@ -30,8 +30,8 @@ jobs:
         with:
           push: true
           tags: yuvenaliyt/python-gitlab-commit2gsheet:latest
-          secrets: 
-            "PRIVATE_TOKEN=${{ secrets.PRIVATE_TOKEN }}"
+          #secrets: 
+          #  "PRIVATE_TOKEN=${{ secrets.PRIVATE_TOKEN }}"
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }} 
