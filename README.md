@@ -12,7 +12,7 @@ export WORKSHEET_KEY="GOOGLE_SHEET_KEY"
 python gitlab_commits2telegram.py
 ```
 
-```
+
 ## Runnning with docker
 
 ```shell
