@@ -33,7 +33,7 @@ GITLAB_API_URL_COMMIT_TWO = GITLAB_API_URL_COMMIT_MIX  ##"/repository/commits"  
 print(GITLAB_API_URL_COMMIT_TWO)
 
 def get_data(url):
-    response = requests.get(url, headers={"PRIVATE-TOKEN":PRIVATE_TOKEN}, verify=True)
+    response = requests.get(url, headers={"PRIVATE-TOKEN":PRIVATE_TOKEN}, verify=False)
     data = response.json()
     print(url)
     return data
